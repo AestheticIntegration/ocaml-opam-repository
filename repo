@@ -1,4 +1,4 @@
 opam-version: "2.0"
 browse: "https://opam.ocaml.org/pkg/"
 upstream: "https://github.com/ocaml/opam-repository/tree/master/"
-archive-mirrors: ["https://opam.ocaml.org/cache"]
+archive-mirrors: ["https://opam.ocaml.org/cache", "https://storage.googleapis.com/opam-repository-ocaml/cache"]
