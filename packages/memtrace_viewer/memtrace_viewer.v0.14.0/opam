@@ -7,11 +7,12 @@ dev-repo: "git+https://github.com/janestreet/memtrace_viewer.git"
 doc: "https://ocaml.janestreet.com/ocaml-core/latest/doc/memtrace_viewer/index.html"
 license: "MIT"
 build: [
-  ["dune" "build" "--profile" "release" "--default-target" "@install" "."]
+  ["dune" "build" "--profile" "release" "--default-target" "@install" "."
+     "--root" "." "--cache-transport=direct"]
   ["cp" "_build/default/memtrace_viewer.install" "."]
 ]
 depends: [
-  "ocaml" {>= "4.11.0"}
+  "ocaml" {>= "4.11.0" & < "4.12"}
   "conf-libssl"
   "astring" {>= "0.8.5"}
   "base64" {>= "3.4.0"}
@@ -30,8 +31,10 @@ depends: [
   "logs" {>= "0.7.0"}
   "magic-mime" {>= "1.1.2"}
   "memtrace" {>= "0.1.1"}
+  "ocaml-migrate-parsetree" {>= "0.4" & < "2.0.0"}
   "octavius" {>= "1.2.2"}
-  "ppxlib" {>= "0.15.0"}
+  "ppxlib" {>= "0.15.0" & < "0.18.0"}
+  "ppx_tools_versioned" {>= "5.4.0"}
   "spawn" {>= "v0.13.0"}
   "tyxml" {>= "4.4.0"}
   "uri" {>= "3.1.0"}
